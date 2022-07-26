@@ -1,0 +1,45 @@
+
+<div id="left" color="green" size="20px" style="position: absolute; width: 100%;position: absolute;top:-10px; left: 30%;" onclick="down()">
+ <h1 style=" color:white;font-size:40px;"> Hyper WiKI </h1> </div>
+<body style=" background-color: black;"> 
+
+
+
+  <img src="https://alex2060.github.io/Examplepage/Athena_3.jpg" id="brand" alt="Girl in a jacket" width="80%" height="auto" style="top:0%;position: absolute; left:0%;height:10%;  width: auto;" > 
+
+
+<div id="imgholder"   >
+
+
+  <div id="left" color="green" size="20px" style="position: absolute; left:90%;height:100%;" onclick="up1()"><h1 style="width: 10%; color:white;font-size:10vw;"></br> > </h1> </div>
+
+    <div id="left" color="green" size="20px" style="position: absolute; left:0%;height:100%;" onclick="down()"><h1 style="width: 10%; color:white;font-size:10vw;"></br> < </h1> </div>
+
+
+  <img src="" id="img" alt="Girl in a jacket" width="80%" height="auto" style="top:10%;position: absolute; left:10% " > 
+</div>
+</body>
+
+<script type="text/javascript">
+  value=0;
+  
+
+ar=["https://alex2060.github.io/Examplepage/haly7ef21r481.png","https://alex2060.github.io/Examplepage/773kn26pia181.png","https://alex2060.github.io/Examplepage/quv4mu89qx581.jpeg","https://alex2060.github.io/Examplepage/tyzoig6pia181.png"]
+document.getElementById("img").src=ar[0];
+
+  function up1() {
+    value+=1;
+    document.getElementById("img").src=ar[value%ar.length];
+  }
+
+  function down() {
+    value+=-1;
+    if (value==-1){
+      value=ar.length;
+    }
+    document.getElementById("img").src=ar[value%ar.length];
+  }
+
+
+</script>
+

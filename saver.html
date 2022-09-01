@@ -8,7 +8,7 @@
 <head>
     <meta charset="utf-8">
 
-    <meta name="description" content="">  
+    <meta name="description" content="">
 
     <style>
 
@@ -17,26 +17,26 @@
             transform-style: preserve-3d;
             transform: rotateX(-20deg) rotateY(90deg) translate3d(200px,515px,-250px);}
         #plane{
-            width: 300px; height: 300px; 
-            position: absolute; 
+            width: 300px; height: 300px;
+            position: absolute;
             transform-origin: 0px 0px -600px;
-            transform: rotateX(90deg) translate3d(0px, 0px,-600px) ; 
+            transform: rotateX(90deg) translate3d(0px, 0px,-600px) ;
             background: blue;}
         #plane2{
-            width: 300px; height: 300px; 
-            position: absolute; 
+            width: 300px; height: 300px;
+            position: absolute;
             transform-origin: 0px 0px -600px;
-            transform: rotateX(0deg) translate3d(0px, 0px,-600px) ; 
+            transform: rotateX(0deg) translate3d(0px, 0px,-600px) ;
             background: blue;}
         #plane3{
-            width: 300px; height: 300px; 
-            position: absolute; 
+            width: 300px; height: 300px;
+            position: absolute;
             transform-origin: 300px -600px -300px;
-            transform: rotateY(90deg) translate3d(300px, -600px,-300px) ; 
+            transform: rotateY(90deg) translate3d(300px, -600px,-300px) ;
             background: red;}
         #left{
             z-index: 100000;
-            position: absolute; 
+            position: absolute;
             left: 35%;
             top:80%;
             width: 13%;
@@ -44,7 +44,7 @@
         }
         #right{
             z-index: 100000;
-            position: absolute; 
+            position: absolute;
             left: 63%;
             top:80%;
             width: 13%;
@@ -56,7 +56,7 @@
         }
         #up{
             z-index: 100000;
-            position: absolute; 
+            position: absolute;
             left: 48%;
             top:70%;
             width: 15%;
@@ -64,7 +64,7 @@
         }
         #down{
             z-index: 100000;
-            position: absolute; 
+            position: absolute;
             left: 48%;
             top:90%;
             width: 15%;
@@ -73,7 +73,7 @@
 
         #stop{
             z-index: 100000;
-            position: absolute; 
+            position: absolute;
             left: 48%;
             top:80%;
             width: 15%;
@@ -81,7 +81,7 @@
         }
         #z1{
             z-index: 100000;
-            position: absolute; 
+            position: absolute;
             left: 63%;
             top:70%;
             width: 13%;
@@ -89,7 +89,7 @@
         }
         #z2{
             z-index: 100000;
-            position: absolute; 
+            position: absolute;
             left: 35%;
             top:70%;
             width: 13%;
@@ -97,7 +97,7 @@
         }
         #rot1{
             z-index: 100000;
-            position: absolute; 
+            position: absolute;
             left: 63%;
             top:90%;
             width: 13%;
@@ -105,7 +105,7 @@
         }
         #rot2{
             z-index: 100000;
-            position: absolute; 
+            position: absolute;
             left: 35%;
             top:90%;
             width: 13%;
@@ -115,7 +115,7 @@
 
         #texbox{
             z-index: 100000;
-            position: absolute; 
+            position: absolute;
             background-color: black;
             left: 0%;
             top:0%;
@@ -125,7 +125,7 @@
 
         #texbox2{
             z-index: 100000;
-            position: absolute; 
+            position: absolute;
             background-color: black;
             left: 0%;
             top:0%;
@@ -135,7 +135,7 @@
 
         #mode{
             z-index: 100000;
-            position: absolute; 
+            position: absolute;
 
             left: 20%;
             top:90%;
@@ -153,20 +153,20 @@
     <div id="sean" class="camera">
     </div>
 </div>
-    <div id="left"     onclick="UIchange('z-');">
+    <div id="left"     onmousedown="touchLeft()" onmouseup="untouchLeft()">
         <img  id="idL" src="photes/AL1.png" alt="X+" width="100%" height="100%">
     </div>
-    <div id="right"    onclick="UIchange('z+');">
+    <div id="right"    onmousedown="touchRight()" onmouseup="untouchRight()">
         <img id="idR" src="photes/AR1.png" alt="X+" width="100%" height="100%">
     </div>
-    <div id="up"       onclick="UIchange('y-');">
+    <div id="up"       onmousedown="touchUp()" onmouseup="untouchUp()">
         <img id="idU" src="" alt="X+" width="100%" height="100%"></div>
-    <div id="down"     onclick="UIchange('y+');">
+    <div id="down"     onmousedown="touchDown()" onmouseup="untouchDown()">
         <img  id="idD" src="" alt="X+" width="100%" height="100%">
     </div>
     <div id="stop"     onclick="UIchange('none');"></div>
     <div id="z1"       onclick="UIchange('x-');">
-        <img  id="idLD" src="" alt="X-" width="100%" height="100%"> 
+        <img  id="idLD" src="" alt="X-" width="100%" height="100%">
     </div>
     <div id="z2"       onclick="UIchange('x+');">
         <img  id="idRD" src="" alt="X+" width="100%" height="100%">
@@ -178,7 +178,7 @@
     </div>
     <div id="rot2"     onclick="UIchange('r-');">
 <img id="idRU" src="photes/ALU.png" alt="X+" width="100%" height="100%">
-   
+
     </div>
 
     <div id="texbox"     onclick="">
@@ -233,7 +233,7 @@
 
             <label for="fname" style="color: white;">CJ1</label>
             <input type="text" id="CJ1" name="fname"><br>
-            
+
             <label for="fname" style="color: white;">CS1</label>
             <input type="text" id="CS1" name="fname"><br>
 
@@ -389,7 +389,7 @@ function UIchange(argument) {
         };
     };
     if (mode==2){
-        if (argument=='y-') {
+        if (landed && argument=='y-') {
             jump();
             return;
         }
@@ -476,8 +476,6 @@ function changemap() {
     document.getElementById("idRD").src=ARD;
 
     document.getElementById("modeimg").src=modeimgV;
-
-
 
     myaddtomap=F1S+"(???A???)"+F2S+"(???A???)"+FJ+"(???A???)"+FL1+"(???A???)"+FL2 +"(???A???)"+ FR1+"(???A???)"+FR2+"(???A???)"+AU+"(???A???)"+AD+"(???A???)"+AL+"(???A???)"+ AR+"(???A???)"+ALU+"(???A???)"+ARU+"(???A???)"+ALD+"(???A???)"+ARD+"(???A???)"+modeimgV+"(???A???)"+BG1;
 
@@ -635,13 +633,11 @@ changetomap('',"A")
 }
 
 function changetomap(A,B){
-
     //val = JSON.parse(A);
     //console.log(val);
     //mymaptext=val["text"];
     alert("A");
     mymaptext=A;
-
 
     mymaptext=mymaptext.replaceAll('(___P___)', '"');
     mymaptext=mymaptext.replaceAll('(___F___)','/');
@@ -660,7 +656,6 @@ function changetomap(A,B){
     console.log(json);
     JSONtoMap(json)
     //alert(A)
-
 }
 
 //getMAPformID();
@@ -680,6 +675,8 @@ function JSONtoMap(json){
     }
 
     values = myarray[myarray.length-1].split("(???A???)");
+    console.log(values[0]);
+
     F1S = values[0];
     F2S = values[1];
     FJ=values[2];
@@ -732,12 +729,7 @@ function JSONtoMap(json){
     array_spaces=delletDiv("4")
     array_spaces=delletDiv("2")
     array_spaces=delletDiv("1")
-
-    
 }
-
-
-
 
 //JSONtoMap(json);
 
@@ -762,16 +754,11 @@ function MaptoJSON(){
 
     getimgs();
     mymaptext+=myaddtomap;
-
-
-
     myadd = mymaptext;
 
     document.getElementById("HTML").value=myadd;
-
-
-
 }
+
 function post_responce(path,func,varible){
     fetch(path).then(
     ( response) => {
@@ -813,14 +800,8 @@ function SaveMaptoJSON(){
 
     myadd = mymaptext;
 
-
-
-
     //u1_mygameqjveaeaqcxsewfrsnsgw
     //post_responce("http://localhost:8000/doit?user=&action_type=add_post&password=&text="+myadd ,postmap,"")
-
-
-
 }
 function postmap(A,B){
 console.log(A);
@@ -860,7 +841,7 @@ function get_spot_by_pos(spot) {
         if (array_spaces[i][1]==spot[0] && array_spaces[i][2]==spot[1] && array_spaces[i][3]==spot[2] && array_spaces[i][4]==spot[3]){
             return array_spaces[i][0];
         }
-      
+
     }
     return -1;
 }
@@ -891,10 +872,8 @@ var newplayerz=0;
 var newplayery=0;
 var newplayerx=0;
 function addplayer(argument) {
-
     return "<div onclick=\"selectDIV('player1','black',0);\" id=\"player1\" style=\"width: 100px; height: 100px; position: absolute;transform-origin: 0px 0px 0px; transform: translate3d("+(playerx+100)+"px, "+(playery-100)+"px, "+(playerz+50)+"px) rotateY(-45deg) rotateX(0deg); \"   >  <img src=\""+F1S+"\" id=\"play\" alt=\"X+\" width=\"100%\" height=\"100%\"> </div>";
 }
-//
 
 function update() {
     if (mode==0) {
@@ -908,8 +887,10 @@ function update() {
     }
 }
 var jumper = 0;
+var landed = 0;
 var falling = 0;
 function jump() {
+    landed=false;
     jumper=30;
 }
 
@@ -940,7 +921,7 @@ anicounter+=1;
     if (mydir=="none") {
         if (anicounter%2==0){
          document.getElementById("play").src=F1S;
-         }   
+         }
          else{
             document.getElementById("play").src=F2S;
 
@@ -953,7 +934,7 @@ anicounter+=1;
     if ("z-"==mydir) {
         if (anicounter%2==0){
          document.getElementById("play").src=FL1;
-         }   
+         }
          else{
             document.getElementById("play").src=FL2;
          }
@@ -964,7 +945,7 @@ anicounter+=1;
     if ("z+"==mydir) {
         if (anicounter%2==0){
          document.getElementById("play").src=FR2;
-         }   
+         }
          else{
             document.getElementById("play").src=FR1;
          }
@@ -976,7 +957,7 @@ anicounter+=1;
     if ("x+"==mydir) {
         if (anicounter%2==0){
          document.getElementById("play").src=FL1;
-         }   
+         }
          else{
             document.getElementById("play").src=FL2;
          }
@@ -987,25 +968,18 @@ anicounter+=1;
     if ("x-"==mydir) {
         if (anicounter%2==0){
          document.getElementById("play").src=FR2;
-         }   
+         }
          else{
             document.getElementById("play").src=FR1;
          }
          return;
 
     };
-
-
-
-
-
 }
 
 function moveplayer(direction,speed) {
     //console.log("in here no2");
     mydir=direction;
-
-
 
     timenow= Date.now();
     distrance = (timenow-lastmovetime)*speed;
@@ -1029,18 +1003,11 @@ if (jumper>=-20){
     jumper+=-distrance/10;
 }
 
-
 newcameray+=distrance*jumper/10;
 newplayery+=-distrance*jumper/10;
 
-
-
 //falling
 onserface(distrance);
-
-
-
-
 
 //playery=newplayery;
 //physics
@@ -1127,12 +1094,92 @@ function onserface(distrance){
     else{camerax=newcamerax;playerx=newplayerx;}
 }
 
+let xAxisTouch = 0;
+let yAxisTouch = 0;
+let zAxisTouch = 0;
+
+const touchUp    = event => zAxisTouch = -1;
+const touchDown  = event => zAxisTouch = +1;
+const touchLeft  = event => xAxisTouch = +1;
+const touchRight = event => xAxisTouch = -1;
+
+const untouchUp    = event => zAxisTouch = 0;
+const untouchDown  = event => zAxisTouch = 0;
+const untouchLeft  = event => xAxisTouch = 0;
+const untouchRight = event => xAxisTouch = 0;
+
+const keys    = new Map;
+const keyDown = event => { event.preventDefault(); keys.set(event.key, 0); };
+const keyUp   = event => { event.preventDefault(); keys.delete(event.key); };
+const updateKeys = () => [...keys].forEach(pair => keys.set(pair[0], 1 + pair[1]));
+
+const onFrames = () => {
+    updateKeys();
+    requestAnimationFrame(onFrames);
+    const k = Object.fromEntries(keys);
+
+    let xAxis = 0;
+    let yAxis = 0;
+    let zAxis = 0;
+
+    if(k[' '])
+    {
+        yAxis = -1;
+    }
+
+    if(k.w || k.s)
+    {
+        if(k.w)
+            zAxis = -1;
+        else if(k.s)
+            zAxis = +1;
+    }
+
+    if(k.a || k.d)
+    {
+        if(k.a)
+            xAxis = +1;
+        else if(k.d)
+            xAxis = -1;
+    }
+
+    if(xAxisTouch) xAxis = xAxisTouch;
+    if(yAxisTouch) yAxis = yAxisTouch;
+    if(zAxisTouch) zAxis = zAxisTouch;
+
+    console.log(yAxis, yAxisTouch);
+
+    if(!xAxis && !yAxis && !zAxis)
+    {
+        UIchange('none');
+    }
+    else
+    {
+        if(xAxis)
+        {
+            xAxis > 0 && UIchange('x+');
+            xAxis < 0 && UIchange('x-');
+        }
+
+        if(yAxis)
+        {
+            yAxis > 0 && UIchange('y+');
+            yAxis < 0 && UIchange('y-');
+        }
+
+        if(zAxis)
+        {
+            zAxis > 0 && UIchange('z+');
+            zAxis < 0 && UIchange('z-');
+        }
+    }
+}
+
+document.addEventListener('keydown', keyDown);
+document.addEventListener('keyup', keyUp);
+
+requestAnimationFrame(onFrames);
 
 </script>
-
-
-
-
- 
 </body>
 </html>
